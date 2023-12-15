@@ -8,22 +8,22 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion"
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 
-function AppBody (){
+function AppBody() {
   const [input1, setInput1] = useState('daugryea-asfse-dfsfs214-f');
   const [input2, setInput2] = useState('235432535');
   const [verified, setVerified] = useState(false);
   const [search, setSearch] = useState(false)
 
   function handleState() {
-    setTimeout( () => {
+    setTimeout(() => {
       setVerified(true)
-    }, 1000)
+    }, 500)
   }
 
   function handleSearch() {
-   setTimeout( () => {
-    setSearch(true)
-   }, 1000)
+    setTimeout(() => {
+      setSearch(true)
+    }, 500)
   }
 
   // Manejador para el primer input
@@ -44,19 +44,19 @@ function AppBody (){
 
         <AnimatePresence>
           {
-            search ? <Info/> : null
+            search ? <Info /> : null
           }
         </AnimatePresence>
 
         <div className=' h-[70vh] bg-white flex justify-center py-[8vh]'>
-          <div className=' border-solid border-2 bor w-[50vh] h-[60vh]'>
-            <div className=" bg-zinc-100 h-[8vh]">
-              <p className=" text-zinc-600 text-2xl pt-[1vh] pl-[2vh]" >Validación de Vacunación:</p>
+          <div className=' border-solid border-2 w-[50vh] h-full'>
+            <div className=" bg-zinc-100">
+              <p className=" text-zinc-600 text-2xl pt-[1vh] pb-[2vh] pl-[2vh]" >Validación de Vacunación:</p>
             </div>
 
             <div className=" px-[3vh] py-[4vh] flex w-full">
               <div className=" bg-zinc-200 w-[6vh] h-[6vh] flex justify-center">
-                <img src={UserIcon} className=" w-[6vh] px-[7px] py-[9px]" />
+                <img src={UserIcon} className="  w-[6vh] px-[7px] py-[9px]" />
               </div>
               <input
                 placeholder=""
@@ -82,16 +82,17 @@ function AppBody (){
               <div className="flex px-[3vh] pt-[4vh] bg-zinc-100">
 
                 <AnimatePresence>
-                {
-                  verified ? <motion.img initial={{opacity : 0 }} animate={{ opacity : 1 }} transition={{ duration : 1 }} className=" w-[6vh]" src={Check}/>
+                  {
+                    verified ? <motion.img initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className=" w-[6vh]" src={Check} />
 
-                  : <motion.div exit={{ opacity : 1 }} transition={{ duration : 1 }} onClick={handleState} className="w-[5vh] bg-white border-zinc-400 h-[5vh] border-solid border-2"/>
-                }
+                      : <motion.div exit={{ opacity: 1 }} transition={{ duration: 1 }} onClick={handleState} className="w-[5vh] bg-white border-zinc-400 h-[5vh] border-solid border-2" />
+                  }
                 </AnimatePresence>
 
                 <p className="pl-[2vh] px-[2vh] pt-[1vh]">No soy un robot</p>
                 <img src={Captcha} className="w-[10vh] pl-[4vh]" />
               </div>
+
               <div className="bg-zinc-100">
                 <div className="w-full flex justify-end">
                   <p className="py-[1vh] text-[8px] pr-[1vh]">Privacidad - Condiciones</p>
