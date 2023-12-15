@@ -1,4 +1,4 @@
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import UserIcon from "./assets/user5.png";
 import Captcha from "../src/assets/captchaNegro.png";
