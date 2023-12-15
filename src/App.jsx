@@ -6,8 +6,9 @@ import Check from "./assets/check.svg"
 import Info from "./components/Info"
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion"
+import { Routes, Route, BrowserRouter } from "react-router-dom"
 
-function App() {
+function AppBody (){
   const [input1, setInput1] = useState('daugryea-asfse-dfsfs214-f');
   const [input2, setInput2] = useState('235432535');
   const [verified, setVerified] = useState(false);
@@ -106,6 +107,14 @@ function App() {
       </div>
     </>
   );
+}
+
+function App() {
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<AppBody/>}/>
+    </Routes>
+  </BrowserRouter>
 }
 
 export default App;
