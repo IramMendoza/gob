@@ -110,11 +110,13 @@ function AppBody (){
 }
 
 function App() {
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<AppBody/>}/>
-    </Routes>
-  </BrowserRouter>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AppBody />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
